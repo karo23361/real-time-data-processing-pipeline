@@ -1,6 +1,6 @@
 # Real-TimeLogProcessingPipeline
 
-Overview
+
 This project implements a real-time data pipeline for processing and analyzing logs using Apache Kafka, Apache Spark, Amazon S3, and Amazon Athena. The pipeline is designed to handle high-throughput log data, enabling efficient ingestion, transformation, and querying of large datasets.
 
 Key Features
