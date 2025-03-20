@@ -10,4 +10,5 @@ Storage: unknown (maybe noSQL one).
 Analytics: unknown.
 Technologies: Apache Kafka, Apache Spark, Docker, WSL
 
- !!!!!! This project is scheduled to start within the next few days. Stay tuned for updates! !!!!!!!
+![image](https://github.com/user-attachments/assets/1eb63e71-f6fb-4767-aea8-26b0decae2d8)
+
