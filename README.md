@@ -20,3 +20,8 @@ Checking stream data directly in Kafka:
 
 Console output at spark machine:
 ![image](https://github.com/user-attachments/assets/bc51e39c-ff00-48d6-af81-70dcb9460bc4)
+
+CASSANDRA:
+![image](https://github.com/user-attachments/assets/0cf7b9a9-7cbb-438e-bc93-a9ecb1cef55d)
+
+
