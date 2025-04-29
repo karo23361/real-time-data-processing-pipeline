@@ -1,14 +1,30 @@
-# Real-TimeLogProcessingPipeline
+# Real-Time Log Processing and Database Comparison Pipeline
 
+This project implements a **real-time data pipeline** for processing and analyzing logs using **Apache Kafka**, **Apache Spark**, and **Docker**. The goal of this project is not only to handle high-throughput log data but also to **compare the performance and suitability of different databases** (PostgreSQL and Cassandra) in various scenarios.
 
-This project implements a real-time data pipeline for processing and analyzing logs using Apache Kafka, Apache Spark, Docker. The pipeline is designed to handle high-throughput log data, enabling efficient ingestion, transformation, and querying of large datasets.
+## Key Features:
+- **Data Ingestion**: Logs are collected and streamed using **Apache Kafka**.
+- **Stream Processing**: **Apache Spark** processes the data in real time, performing transformations and preliminary aggregations.
+- **Data Storage**: Data is stored in two different databases — **PostgreSQL** and **Cassandra** — to compare their performance and behavior.
 
-Key Features
-Data Ingestion: Logs are collected and streamed using Apache Kafka.
-Stream Processing: Apache Spark processes the data in real time, performing transformations and aggregations.
-Storage: Cassandra (future)
-Analytics: unknown.
-Technologies: Apache Kafka, Apache Spark, Docker, WSL
+### Database Comparison:
+- Test write and read speeds.
+- Analyze performance for different query types.
+- Evaluate fault tolerance and scalability.
+
+- **Data Analysis**: (Planned) — Additional analysis and visualizations based on test results.
+
+## Technologies:
+- **Apache Kafka**
+- **Apache Spark**
+- **Docker**
+- **PostgreSQL**
+- **Cassandra**
+- **WSL (Windows Subsystem for Linux)**
+
+## Project Goal:
+The objective of the project is to demonstrate in which use cases a relational database (**PostgreSQL**) performs better, and when a NoSQL database (**Cassandra**) is more suitable, specifically in the context of real-time log processing.
+
 
 ![image](https://github.com/user-attachments/assets/1eb63e71-f6fb-4767-aea8-26b0decae2d8)
 
