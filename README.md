@@ -26,7 +26,7 @@ This project implements a **real-time data pipeline** for processing and analyzi
 The objective of the project is to demonstrate in which use cases a relational database (**PostgreSQL**) performs better, and when a NoSQL database (**Cassandra**) is more suitable, specifically in the context of real-time log processing.
 
 
-![image](https://github.com/user-attachments/assets/1eb63e71-f6fb-4767-aea8-26b0decae2d8)
+![image](https://github.com/user-attachments/assets/04809455-1dda-4a0c-97fa-de1d3031ea90)
 
 Streaming into PostgreSQL:
 ![image](https://github.com/user-attachments/assets/baab1fcd-720c-4809-8681-d24adb2fae56)
