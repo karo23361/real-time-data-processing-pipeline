@@ -20,7 +20,6 @@ This project implements a **real-time data pipeline** for processing and analyzi
 - **Docker**
 - **PostgreSQL**
 - **Cassandra**
-- **WSL (Windows Subsystem for Linux)**
 
 ## Project Goal:
 The objective of the project is to demonstrate in which use cases a relational database (**PostgreSQL**) performs better, and when a NoSQL database (**Cassandra**) is more suitable, specifically in the context of real-time log processing.
