@@ -28,14 +28,8 @@ The objective of the project is to demonstrate in which use cases a relational d
 
 ![image](https://github.com/user-attachments/assets/1eb63e71-f6fb-4767-aea8-26b0decae2d8)
 
-Kafka_producer algorithm in action:
-![image](https://github.com/user-attachments/assets/15e273e1-aa3e-4484-bec4-c4a9aa87c442)
-
-Checking stream data directly in Kafka:
-![image](https://github.com/user-attachments/assets/d3aee9c3-f4c7-4913-938f-7f6895e489ce)
-
-Console output at spark machine:
-![image](https://github.com/user-attachments/assets/bc51e39c-ff00-48d6-af81-70dcb9460bc4)
+Streaming into PostgreSQL:
+![image](https://github.com/user-attachments/assets/baab1fcd-720c-4809-8681-d24adb2fae56)
 
 CASSANDRA:
 ![image](https://github.com/user-attachments/assets/0cf7b9a9-7cbb-438e-bc93-a9ecb1cef55d)
