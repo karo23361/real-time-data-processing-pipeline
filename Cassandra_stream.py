@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import split, col
 
+
 spark = SparkSession.builder \
     .appName("KafkaToCassandra") \
     .master("local[*]") \
@@ -10,6 +11,7 @@ spark = SparkSession.builder \
 kafka_bootstrap_servers = "kafka:29092"
 kafka_topic = "csv_records"
 
+
 df_raw = spark.readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", kafka_bootstrap_servers) \
@@ -17,8 +19,10 @@ df_raw = spark.readStream \
     .option("startingOffsets", "latest") \
     .load()
 
+
 processed_df = df_raw.selectExpr("CAST(value AS STRING)") \
     .select(
+        split(col("value"), ",")[0].cast("int").alias("lineid"),
         split(col("value"), ",")[1].alias("date"),
         split(col("value"), ",")[2].alias("time"),
         split(col("value"), ",")[3].cast("int").alias("pid"),
@@ -26,6 +30,7 @@ processed_df = df_raw.selectExpr("CAST(value AS STRING)") \
         split(col("value"), ",")[5].alias("component"),
         split(col("value"), ",")[6].alias("content")
     )
+
 
 def write_to_cassandra(batch_df, batch_id):
     batch_df.write \
