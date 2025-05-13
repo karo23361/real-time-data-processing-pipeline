@@ -39,7 +39,7 @@ def write_to_cassandra(batch_df, batch_id):
         .option("table", "csv_records") \
         .mode("append") \
         .save()
-    print(f"✅ Batch {batch_id} zapisany do Cassandra.")
+    print(f"Batch {batch_id} zapisany do Cassandra.")
 
 query = processed_df.writeStream \
     .foreachBatch(write_to_cassandra) \
