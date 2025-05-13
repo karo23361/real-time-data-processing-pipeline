@@ -44,7 +44,7 @@ def process_batches(df, epoch_id):
         .option("password", "kafka_pass") \
         .option("driver", "org.postgresql.Driver") \
         .save()
-    print(f"✅ Batch {epoch_id} zapisany do PostgreSQL.")
+    print(f"Batch {epoch_id} zapisany do PostgreSQL.")
 
 
 query = processed_df.writeStream \
