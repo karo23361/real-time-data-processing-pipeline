@@ -1,4 +1,4 @@
-# Real-Time Data Processing and Database Comparison Pipeline
+# 🔄💾 Real-Time Data Processing and Database Comparison Pipeline
 
 This project implements a **real-time data pipeline** for processing and analyzing data using **Apache Kafka**, **Apache Spark**, and **Docker**. The goal of this project is not only to handle high-throughput data but also to **compare the performance and suitability of different databases** (PostgreSQL and Cassandra) in various scenarios.
 
