@@ -14,12 +14,14 @@ This project implements a **real-time data pipeline** for processing and analyzi
 
 - **Data Analysis**: (Planned) — Additional analysis and visualizations based on test results.
 
-## Technologies:
-- **Apache Kafka**
-- **Apache Spark**
-- **Docker**
-- **PostgreSQL**
-- **Cassandra**
+## 🛠️ Technologies
+
+- 📨 **Apache Kafka**
+- ⚡ **Apache Spark**
+- 🐳 **Docker**
+- 🐘 **PostgreSQL**
+- 🍃 **Cassandra**
+
 
 ## Project Goal:
 The objective of the project is to demonstrate in which use cases a relational database (**PostgreSQL**) performs better, and when a NoSQL database (**Cassandra**) is more suitable, specifically in the context of real-time log processing.
