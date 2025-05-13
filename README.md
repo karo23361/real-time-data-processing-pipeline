@@ -1,9 +1,9 @@
-# Real-Time Log Processing and Database Comparison Pipeline
+# Real-Time Data Processing and Database Comparison Pipeline
 
-This project implements a **real-time data pipeline** for processing and analyzing logs using **Apache Kafka**, **Apache Spark**, and **Docker**. The goal of this project is not only to handle high-throughput log data but also to **compare the performance and suitability of different databases** (PostgreSQL and Cassandra) in various scenarios.
+This project implements a **real-time data pipeline** for processing and analyzing data using **Apache Kafka**, **Apache Spark**, and **Docker**. The goal of this project is not only to handle high-throughput data but also to **compare the performance and suitability of different databases** (PostgreSQL and Cassandra) in various scenarios.
 
 ## Key Features:
-- **Data Ingestion**: Logs are collected and streamed using **Apache Kafka**.
+- **Data Ingestion**: Data are collected and streamed using **Apache Kafka**.
 - **Stream Processing**: **Apache Spark** processes the data in real time, performing transformations and preliminary aggregations.
 - **Data Storage**: Data is stored in two different databases — **PostgreSQL** and **Cassandra** — to compare their performance and behavior.
 
