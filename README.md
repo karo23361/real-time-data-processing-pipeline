@@ -7,12 +7,10 @@ This project implements a **real-time data pipeline** for processing and analyzi
 - **Stream Processing**: **Apache Spark** processes the data in real time, performing transformations and preliminary aggregations.
 - **Data Storage**: Data is stored in two different databases — **PostgreSQL** and **Cassandra** — to compare their performance and behavior.
 
-### Database Comparison:
-- Test write and read speeds.
-- Analyze performance for different query types.
-- Evaluate fault tolerance and scalability.
-
-- **Data Analysis**: (Planned) — Additional analysis and visualizations based on test results.
+### Database Comparison: 
+- Test write and read speeds. (Cassandra typically performs better in high-throughput writes, while PostgreSQL provides strong consistency and better support for complex read operations.)
+- Analyze performance for different query types. (Cassandra is optimized for denormalized data and performs efficiently only when the partition key is specified - otherwise, queries can degrade significantly in speed due to full cluster scans.)
+- Evaluate fault tolerance and scalability. (Evaluate high availability by disconnecting a node from the Cassandra cluster and observing system resilience during reads and writes. In PostgreSQL, test how the system responds to primary key conflicts during insert operations to examine its strict consistency model.)
 
 ## 🛠️ Technologies
 
