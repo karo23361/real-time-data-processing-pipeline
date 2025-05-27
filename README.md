@@ -27,20 +27,16 @@ The objective of the project is to demonstrate in which use cases a relational d
 # How to Test the Application
 
 1. Navigate to the folder containing the `docker-compose.yml` file in your terminal. If you're using Docker Desktop, run `docker-compose up` to start the containers.
-
 ![image](https://github.com/user-attachments/assets/51d48300-c1ac-496d-8f0d-0cf401bfab2c)
-
 ![image](https://github.com/user-attachments/assets/fae128d7-0c0b-4e0e-b73c-e1229d25cebd)
 
 2. Once the containers are up and running, open your browser and go to `localhost:8888` to access Jupyter Lab.
 ![image](https://github.com/user-attachments/assets/dec8202c-a5ec-4f96-81ec-e95c1a776945)
 
 3. Upload the necessary files to the PySpark machine through the Jupyter Lab interface.
-
 ![image](https://github.com/user-attachments/assets/573f01e0-9757-4bfa-b75d-d49b413dc888)
 
 4. Modify the code to process your file. The current code is set up for a specific CSV file format with a predefined split pattern. You'll need to adjust the code according to your CSV structure (e.g., changing split indices to match your data).
-
 ![image](https://github.com/user-attachments/assets/75ecc911-ce73-46e8-b0a3-5620ab62706a)
 
 
@@ -123,5 +119,4 @@ In pyspark-jupter-lab container:
 python Producer.py
 ```
 10. Observe the data being written to the database. You can query the database (Cassandra or PostgreSQL) to verify that the records have been inserted correctly.
-
 ![image](https://github.com/user-attachments/assets/ba8dff7c-0354-46d5-9020-2c2b3a10c9c5)
