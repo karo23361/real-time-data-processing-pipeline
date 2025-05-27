@@ -26,7 +26,7 @@ The objective of the project is to demonstrate in which use cases a relational d
 
 # How to Test the Application
 
-1. Navigate to the folder containing the `docker-compose.yml` file in your terminal. If you're using Docker Desktop, run `docker-compose up` to start the containers.
+**1. Navigate to the folder containing the `docker-compose.yml` file in your terminal. If you're using Docker Desktop, run `docker-compose up` to start the containers.**
 ![image](https://github.com/user-attachments/assets/51d48300-c1ac-496d-8f0d-0cf401bfab2c)
 ![image](https://github.com/user-attachments/assets/fae128d7-0c0b-4e0e-b73c-e1229d25cebd)
 
