@@ -36,7 +36,8 @@ The objective of the project is to demonstrate in which use cases a relational d
 **3. Upload the necessary files to the PySpark machine through the Jupyter Lab interface.**
 ![image](https://github.com/user-attachments/assets/573f01e0-9757-4bfa-b75d-d49b413dc888)
 
-**4. Modify the code to process your file. The current code is set up for a specific CSV file format with a predefined split pattern. You'll need to adjust the code according to your CSV structure (e.g., changing split indices to match your data).**
+**4. Modify the code to process your file. The current code is set up for a specific CSV file format with a predefined split pattern. You'll need to adjust the code according to your CSV structure (e.g., changing split indices to match your data).
+**
 ![image](https://github.com/user-attachments/assets/75ecc911-ce73-46e8-b0a3-5620ab62706a)
 
 
