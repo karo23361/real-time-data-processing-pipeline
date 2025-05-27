@@ -1,67 +1,70 @@
-version: '2'
-services:
-  pyspark-jupyter:
-    image: easewithdata/pyspark-jupyter-lab
-    container_name: pyspark-jupyter-lab
+version: '2' 
+
+services:  # Definicja wszystkich kontenerów/usług, które będą uruchomione
+
+  pyspark-jupyter:  # Usługa z JupyterLab i PySparkiem
+    image: easewithdata/pyspark-jupyter-lab  # Obraz z wbudowanym PySparkiem i JupyterLab
+    container_name: pyspark-jupyter-lab  # Nazwa kontenera
     ports:
-      - 8888:8888
-      - 4040:4040
+      - 8888:8888  # Port JupyterLab – interfejs do pracy z notebookami
+      - 4040:4040  # Port Spark UI – podgląd działania jobów Sparkowych
     environment:
       JUPYTER_PORT: 8888
       SPARK_UI_PORT: 4040
     volumes:
-      - spark_data:/data:rw
-    depends_on:
+      - spark_data:/data:rw  # Współdzielony wolumen danych z innymi usługami
+    depends_on:  # Usługa uruchomi się dopiero po tych usługach
       - kafka
       - cassandra
       - postgres
 
-  zookeeper:
+  zookeeper:  # Usługa Zookeepera – wymagana do działania Kafki
     image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
     ports:
-      - 2181:2181
+      - 2181:2181  # Standardowy port do komunikacji z Kafką
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_TICK_TIME: 2000  # Podstawowa jednostka czasu synchronizacji
 
-  kafka:
+  kafka:  # Usługa Apache Kafka
     image: confluentinc/cp-kafka:latest
     container_name: kafka
     depends_on:
-      - zookeeper
+      - zookeeper  # Kafka potrzebuje Zookeepera do uruchomienia
     ports:
-      - 9092:9092
+      - 9092:9092  # Port do komunikacji z aplikacjami z zewnątrz
     volumes:
-      - spark_data:/data:rw
+      - spark_data:/data:rw  # Dostęp do wspólnego wolumenu (opcjonalnie do logów lub danych)
     environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 1  # ID brokera w klastrze
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181  # Adres Zookeepera
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://127.0.0.1:9092
+        # Zewnętrzne i wewnętrzne punkty dostępu
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_CREATE_TOPICS: "raw:1:1"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1  # Liczba replik – 1 wystarcza na lokalne testy
+      KAFKA_CREATE_TOPICS: "raw:1:1"  # Tworzy temat 'raw' z 1 partycją i 1 repliką
 
-  cassandra:
+  cassandra:  # Usługa Apache Cassandra
     image: cassandra:latest
     container_name: cassandra
     ports:
-      - 9042:9042
+      - 9042:9042  # Port klienta do komunikacji z Cassandrą
     environment:
-      - CASSANDRA_CLUSTER_NAME=KafkaCassandraCluster
-      - CASSANDRA_DC=DC1
-      - CASSANDRA_RACK=RAC1
+      - CASSANDRA_CLUSTER_NAME=KafkaCassandraCluster  # Nazwa klastra
+      - CASSANDRA_DC=DC1  # Data Center – wymagana dla konfiguracji klastra
+      - CASSANDRA_RACK=RAC1  # Rachunek logiczny w DC – pomocne w rozproszeniu węzłów
 
-  postgres:
+  postgres:  # Usługa PostgreSQL
     image: postgres:latest
     container_name: postgres
     ports:
-      - 5432:5432
+      - 5432:5432  # Standardowy port bazy PostgreSQL
     environment:
-      POSTGRES_USER: kafka_user
+      POSTGRES_USER: kafka_user  # Dane logowania do bazy
       POSTGRES_PASSWORD: kafka_pass
-      POSTGRES_DB: kafka_db
+      POSTGRES_DB: kafka_db  # Domyślna nazwa bazy danych
 
 volumes:
-  spark_data:
+  spark_data:  # Deklaracja wolumenu współdzielonego – może przechowywać dane, logi, konfiguracje
