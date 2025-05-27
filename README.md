@@ -41,6 +41,7 @@ The objective of the project is to demonstrate in which use cases a relational d
 
 
 **5. Create the appropriate database/keyspace depending on whether you're using Cassandra or PostgreSQL. For Cassandra, you need to create a keyspace. For PostgreSQL, create the database.**
+
 In PostgreSQL container:
 
 PostgreSQL
