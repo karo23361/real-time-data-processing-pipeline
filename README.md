@@ -33,7 +33,6 @@ The objective of the project is to demonstrate in which use cases a relational d
 ![image](https://github.com/user-attachments/assets/fae128d7-0c0b-4e0e-b73c-e1229d25cebd)
 
 2. Once the containers are up and running, open your browser and go to `localhost:8888` to access Jupyter Lab.
-
 ![image](https://github.com/user-attachments/assets/dec8202c-a5ec-4f96-81ec-e95c1a776945)
 
 3. Upload the necessary files to the PySpark machine through the Jupyter Lab interface.
